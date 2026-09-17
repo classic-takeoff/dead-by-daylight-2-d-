@@ -1,0 +1,1497 @@
+{
+  "_说明": "游戏数值唯一配置源。时间=秒，距离/速度=世界像素及像素每秒，概率=0到1，角度=弧度；vision=null 表示无限视野。修改后开发服务器自动重载；发布需 npm run build 并上传。地图坐标、随机地图规则与平衡参数分区管理。",
+  "core": {
+    "survivorSpeed": 112,
+    "crouchSpeed": 30,
+    "killerSpeed": 122,
+    "terrorRadius": 600,
+    "repairTime": 48,
+    "repairLockTime": 3,
+    "healTime": 12,
+    "gateTime": 16,
+    "hookPhase": 60,
+    "rescueTime": 1.5,
+    "carryPlayerTime": 32,
+    "carryAITime": 22,
+    "wiggleInterval": 0.25,
+    "wiggleGain": 0.012,
+    "bleedTime": 60,
+    "endgameTime": 100,
+    "attackRange": 48,
+    "lungeRange": 74,
+    "attackHalfAngle": 0.3141592653589793,
+    "maxChargeTime": 0.55,
+    "lockerAlertDelay": 20,
+    "lockerAlertInterval": 15,
+    "nearVision": 65,
+    "survivorNearVision": 75,
+    "vision": 560,
+    "survivorVision": 520,
+    "survivorHalfAngle": 1.2217304763960306,
+    "killerHalfAngle": 1.2217304763960306
+  },
+  "movement": {
+    "walkSpeed": 72,
+    "crawlSpeed": 23,
+    "carrySpeed": 89,
+    "chargeMultiplier": 0.72,
+    "boostMultiplier": 1.45,
+    "recoveryMultiplier": 0.4,
+    "bodyDiameter": 20,
+    "collisionRadius": 10,
+    "pathRadius": 11,
+    "boostSeconds": 2,
+    "recentMotionSeconds": 0.12,
+    "fastVaultSpeed": 100,
+    "carryDropOffset": 28
+  },
+  "actions": {
+    "hitRecovery": 3.2,
+    "missRecovery": 0.9,
+    "chargeRecovery": 0.8,
+    "lungeThreshold": 0.25,
+    "hookSeconds": 0.9,
+    "breakPalletSeconds": 2.3,
+    "kickSeconds": 1.8,
+    "kickLoss": 0.05,
+    "repairPeerPenalty": 0.15,
+    "regressionMultiplier": 0.2,
+    "recoverCap": 0.95,
+    "recoverSeconds": 26,
+    "rescueProtection": 8,
+    "rescueTransition": 0.35,
+    "pickupCooldown": 1,
+    "dropCarriedCooldown": 0.7,
+    "maxHooks": 3,
+    "selfRescueChance": 0.04,
+    "selfRescuePenalty": 12,
+    "selfRescueCooldown": 1.5,
+    "wiggleProtection": 3,
+    "wiggleStun": 3,
+    "stunSeconds": 2.6,
+    "stunRadius": 65,
+    "breakImpacts": [
+      0.35,
+      0.85
+    ],
+    "kickImpact": 0.7,
+    "healPerHelperMultiplier": 1
+  },
+  "traversal": {
+    "stairsRange": 32,
+    "stairsSeconds": 0.55,
+    "stairsCooldown": 0.6,
+    "dropRange": 37,
+    "dropSeconds": 0.7,
+    "killerLandingSeconds": 0.8,
+    "survivorLandingSeconds": 1.15,
+    "palletRange": 58,
+    "palletOffset": 36,
+    "palletDropSeconds": 0.18,
+    "palletFastSeconds": 0.7,
+    "palletSlowSeconds": 1.5,
+    "windowRange": 62,
+    "windowOffset": 32,
+    "killerWindowSeconds": 1.1,
+    "windowFastSeconds": 0.55,
+    "windowSlowSeconds": 1.25,
+    "palletDropCooldown": 0.35,
+    "palletUnstuckOffsets": [
+      26,
+      38,
+      50
+    ]
+  },
+  "interactions": {
+    "defaultRange": 58,
+    "repairRange": 60,
+    "healRange": 44,
+    "rescueRange": 48,
+    "lockerRange": 48,
+    "gateRange": 65,
+    "workRange": 66,
+    "healStandOff": 21,
+    "rescueStandOff": 25,
+    "workStandOff": 32,
+    "workApproachRate": 12,
+    "pickupRange": 45,
+    "vaultGrabRange": 42,
+    "vaultGrabCosine": 0.35,
+    "workGrace": 0.12,
+    "repairGrace": 0.15,
+    "healGrace": 0.2,
+    "hatchRange": 58
+  },
+  "lockers": {
+    "searchSeconds": 1.2,
+    "enterSeconds": 0.45,
+    "exitCooldown": 0.65,
+    "grabSeconds": 0.8,
+    "grabCooldown": 1,
+    "emptyCooldown": 0.5,
+    "doorOffset": 36,
+    "halfWidth": 17,
+    "halfHeight": 13
+  },
+  "skill": {
+    "firstDelay": 7,
+    "warningSeconds": 0.65,
+    "startMin": 0.48,
+    "startRandom": 0.22,
+    "width": 0.18,
+    "intervalMin": 5,
+    "intervalRandom": 7,
+    "hookPenalty": 6,
+    "repairLoss": 0.08,
+    "healLoss": 0.15,
+    "failureCooldown": 1.2,
+    "cancelDelay": 4,
+    "sweepSeconds": 0.95
+  },
+  "alerts": {
+    "generatorSeconds": 8,
+    "rescueSeconds": 8,
+    "healInterruptSeconds": 8,
+    "lockerSeconds": 12,
+    "kickSeconds": 5,
+    "noiseSeconds": 5,
+    "scratchSeconds": 7,
+    "bloodSeconds": 14,
+    "traceInterval": 0.3,
+    "tauntCooldown": 0.25
+  },
+  "match": {
+    "groundGenerators": 6,
+    "upstairsGenerators": 1,
+    "requiredGenerators": 5,
+    "outdoorHooks": 11,
+    "gateAnimationSeconds": 1.4,
+    "gateExitOffset": 160,
+    "escapeRadius": 18,
+    "escapeAnimationSeconds": 0.9,
+    "deathSeconds": 2.4,
+    "chaseRange": 220,
+    "chaseAttackGrace": 2,
+    "chaseMemory": 3,
+    "floorDistancePenalty": 450,
+    "floorSoundDistance": 80,
+    "chaseAimWeight": 80,
+    "chaseSwitchMargin": 45
+  },
+  "lunge": {
+    "windup": 0.035,
+    "contact": 0.065,
+    "end": 0.24,
+    "distance": 22.4,
+    "recovery": 0.65
+  },
+  "camera": {
+    "survivor": {
+      "fov": 60,
+      "z": 0.8
+    },
+    "killer": {
+      "fov": 45,
+      "z": 0.8
+    },
+    "mobileKillerZoom": 0.75,
+    "fit": {
+      "mobileMin": 0.8,
+      "mobileMax": 1.6,
+      "mobileWidth": 430,
+      "mobileHeight": 300,
+      "desktopMin": 1.25,
+      "desktopMax": 2.25,
+      "desktopWidth": 640,
+      "desktopHeight": 390
+    }
+  },
+  "audio": {
+    "defaultVolume": 0.65,
+    "tauntRange": 700,
+    "tauntDurations": [
+      1.752,
+      1.824,
+      4.248,
+      10.296,
+      2.424,
+      2.952,
+      2.472
+    ],
+    "heartbeat": {
+      "interval": 1.2,
+      "intervalDrop": 0.88,
+      "gain": 0.16,
+      "gainRise": 1.22,
+      "exponent": 1.6,
+      "cutoff": 260,
+      "cutoffRise": 320
+    },
+    "chaseVolume": 0.42,
+    "workVolume": 0.58,
+    "runStepSeconds": 0.31,
+    "walkStepSeconds": 0.48,
+    "runStepVolume": 0.34,
+    "walkStepVolume": 0.18
+  },
+  "stairsVisual": {
+    "width": 46,
+    "length": 66,
+    "steps": 7,
+    "rise": 4,
+    "bloodColor": 7607083,
+    "upColor": 11314556,
+    "downColor": 6512466,
+    "basementColor": 4406846
+  },
+  "layout": {
+    "attempts": 3000,
+    "palletCount": 12,
+    "verticalChance": 0.5,
+    "origin": {
+      "x": 176,
+      "y": 112
+    },
+    "columns": 48,
+    "rows": 38,
+    "cell": 32,
+    "longLeft": 120,
+    "longRandom": 35,
+    "shortLeft": 42,
+    "shortRandom": 20,
+    "longRight": 75,
+    "shortRight": 45,
+    "halfGap": 28,
+    "thickness": 26,
+    "wallClearance": 34,
+    "objectiveClearance": 60,
+    "approachOffset": 48,
+    "lowEvery": 4,
+    "bounds": {
+      "x": 65,
+      "y": 60,
+      "right": 1855,
+      "bottom": 1380
+    },
+    "keepClear": [
+      {
+        "x": 24,
+        "y": 610,
+        "w": 210,
+        "h": 200,
+        "pad": 30
+      },
+      {
+        "x": 1680,
+        "y": 610,
+        "w": 216,
+        "h": 200,
+        "pad": 30
+      },
+      {
+        "x": 570,
+        "y": 400,
+        "w": 170,
+        "h": 340,
+        "pad": 0
+      },
+      {
+        "x": 240,
+        "y": 60,
+        "w": 430,
+        "h": 300,
+        "pad": 48
+      },
+      {
+        "x": 760,
+        "y": 380,
+        "w": 400,
+        "h": 450,
+        "pad": 48
+      }
+    ],
+    "rockClearance": 64,
+    "retries": 12,
+    "rockLoopEvery": 4,
+    "rockDepth": 34,
+    "rockDepthRandom": 12
+  },
+  "basement": {
+    "inset": 32,
+    "wallThickness": 12,
+    "entranceOffset": {
+      "x": 48,
+      "y": 48
+    },
+    "hookOffsets": [
+      {
+        "x": 130,
+        "y": 60
+      },
+      {
+        "x": 200,
+        "y": 60
+      },
+      {
+        "x": 130,
+        "y": 116
+      },
+      {
+        "x": 200,
+        "y": 116
+      }
+    ],
+    "shackChance": 0.5
+  },
+  "world": {
+    "size": {
+      "w": 1920,
+      "h": 1440
+    },
+    "upperFloor": {
+      "x": 785,
+      "y": 405,
+      "w": 350,
+      "h": 400
+    },
+    "buildings": [
+      {
+        "name": "白房",
+        "x": 240,
+        "y": 60,
+        "w": 430,
+        "h": 300
+      },
+      {
+        "name": "双层房",
+        "x": 760,
+        "y": 380,
+        "w": 400,
+        "h": 450
+      }
+    ],
+    "stairs": [
+      {
+        "bottom": {
+          "x": 835,
+          "y": 743,
+          "level": 0
+        },
+        "top": {
+          "x": 835,
+          "y": 743,
+          "level": 1
+        }
+      },
+      {
+        "bottom": {
+          "x": 1085,
+          "y": 593,
+          "level": 0
+        },
+        "top": {
+          "x": 1085,
+          "y": 593,
+          "level": 1
+        }
+      }
+    ],
+    "drops": [
+      {
+        "top": {
+          "x": 1085,
+          "y": 768,
+          "level": 1
+        },
+        "bottom": {
+          "x": 1085,
+          "y": 874,
+          "level": 0
+        }
+      }
+    ],
+    "walls": [
+      {
+        "x": 0,
+        "y": 0,
+        "w": 1920,
+        "h": 24,
+        "kind": "wall"
+      },
+      {
+        "x": 0,
+        "y": 1416,
+        "w": 1920,
+        "h": 24,
+        "kind": "wall"
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "w": 24,
+        "h": 656,
+        "kind": "wall"
+      },
+      {
+        "x": 0,
+        "y": 764,
+        "w": 24,
+        "h": 676,
+        "kind": "wall"
+      },
+      {
+        "x": 1896,
+        "y": 0,
+        "w": 24,
+        "h": 656,
+        "kind": "wall"
+      },
+      {
+        "x": 1896,
+        "y": 764,
+        "w": 24,
+        "h": 676,
+        "kind": "wall"
+      },
+      {
+        "x": 760,
+        "y": 380,
+        "w": 400,
+        "h": 25,
+        "kind": "wall"
+      },
+      {
+        "x": 760,
+        "y": 380,
+        "w": 25,
+        "h": 450,
+        "kind": "wall"
+      },
+      {
+        "x": 1135,
+        "y": 380,
+        "w": 25,
+        "h": 250,
+        "kind": "wall"
+      },
+      {
+        "x": 1135,
+        "y": 690,
+        "w": 25,
+        "h": 140,
+        "kind": "wall"
+      },
+      {
+        "x": 760,
+        "y": 805,
+        "w": 155,
+        "h": 25,
+        "kind": "wall"
+      },
+      {
+        "x": 990,
+        "y": 805,
+        "w": 170,
+        "h": 25,
+        "kind": "wall"
+      },
+      {
+        "x": 1250,
+        "y": 260,
+        "w": 28,
+        "h": 81,
+        "kind": "wall"
+      },
+      {
+        "x": 1250,
+        "y": 389,
+        "w": 28,
+        "h": 51,
+        "kind": "wall"
+      },
+      {
+        "x": 1250,
+        "y": 260,
+        "w": 220,
+        "h": 24,
+        "kind": "wall"
+      },
+      {
+        "x": 1410,
+        "y": 420,
+        "w": 180,
+        "h": 28,
+        "kind": "junk",
+        "low": true
+      },
+      {
+        "x": 280,
+        "y": 830,
+        "w": 220,
+        "h": 32,
+        "kind": "junk",
+        "low": true
+      },
+      {
+        "x": 280,
+        "y": 830,
+        "w": 28,
+        "h": 93,
+        "kind": "junk",
+        "low": true
+      },
+      {
+        "x": 280,
+        "y": 971,
+        "w": 28,
+        "h": 49,
+        "kind": "junk",
+        "low": true
+      },
+      {
+        "x": 548,
+        "y": 830,
+        "w": 125,
+        "h": 32,
+        "kind": "junk",
+        "low": true
+      },
+      {
+        "x": 1100,
+        "y": 1030,
+        "w": 28,
+        "h": 185,
+        "kind": "wall"
+      },
+      {
+        "x": 1100,
+        "y": 1030,
+        "w": 130,
+        "h": 26,
+        "kind": "wall"
+      },
+      {
+        "x": 1278,
+        "y": 1030,
+        "w": 160,
+        "h": 26,
+        "kind": "wall"
+      },
+      {
+        "x": 1540,
+        "y": 780,
+        "w": 180,
+        "h": 32,
+        "kind": "junk",
+        "low": true
+      },
+      {
+        "x": 1692,
+        "y": 780,
+        "w": 28,
+        "h": 180,
+        "kind": "junk",
+        "low": true
+      },
+      {
+        "x": 820,
+        "y": 1060,
+        "w": 110,
+        "h": 70,
+        "kind": "junk"
+      },
+      {
+        "x": 731,
+        "y": 385,
+        "w": 9,
+        "h": 17,
+        "kind": "tree"
+      },
+      {
+        "x": 1186,
+        "y": 755,
+        "w": 9,
+        "h": 17,
+        "kind": "tree"
+      },
+      {
+        "x": 1336,
+        "y": 625,
+        "w": 9,
+        "h": 17,
+        "kind": "tree"
+      },
+      {
+        "x": 696,
+        "y": 765,
+        "w": 9,
+        "h": 17,
+        "kind": "tree"
+      },
+      {
+        "x": 1456,
+        "y": 945,
+        "w": 9,
+        "h": 17,
+        "kind": "tree"
+      },
+      {
+        "x": 1656,
+        "y": 395,
+        "w": 9,
+        "h": 17,
+        "kind": "tree"
+      },
+      {
+        "x": 124,
+        "y": 238,
+        "w": 24,
+        "h": 26,
+        "kind": "tree"
+      },
+      {
+        "x": 1799,
+        "y": 394,
+        "w": 24,
+        "h": 26,
+        "kind": "tree"
+      },
+      {
+        "x": 196,
+        "y": 392,
+        "w": 24,
+        "h": 26,
+        "kind": "tree"
+      },
+      {
+        "x": 1377,
+        "y": 1326,
+        "w": 24,
+        "h": 26,
+        "kind": "tree"
+      },
+      {
+        "x": 1826,
+        "y": 560,
+        "w": 24,
+        "h": 26,
+        "kind": "tree"
+      },
+      {
+        "x": 1769,
+        "y": 1237,
+        "w": 24,
+        "h": 26,
+        "kind": "tree"
+      },
+      {
+        "x": 1728,
+        "y": 1335,
+        "w": 24,
+        "h": 26,
+        "kind": "tree"
+      },
+      {
+        "x": 116,
+        "y": 377,
+        "w": 24,
+        "h": 26,
+        "kind": "tree"
+      },
+      {
+        "x": 254,
+        "y": 1271,
+        "w": 24,
+        "h": 26,
+        "kind": "tree"
+      },
+      {
+        "x": 1796,
+        "y": 423,
+        "w": 24,
+        "h": 26,
+        "kind": "tree"
+      },
+      {
+        "x": 1423,
+        "y": 1261,
+        "w": 24,
+        "h": 26,
+        "kind": "tree"
+      },
+      {
+        "x": 1106,
+        "y": 98,
+        "w": 24,
+        "h": 26,
+        "kind": "tree"
+      },
+      {
+        "x": 1813,
+        "y": 95,
+        "w": 24,
+        "h": 26,
+        "kind": "tree"
+      },
+      {
+        "x": 160,
+        "y": 370,
+        "w": 24,
+        "h": 26,
+        "kind": "tree"
+      },
+      {
+        "x": 734,
+        "y": 180,
+        "w": 24,
+        "h": 26,
+        "kind": "tree"
+      },
+      {
+        "x": 128,
+        "y": 120,
+        "w": 24,
+        "h": 26,
+        "kind": "tree"
+      },
+      {
+        "x": 821,
+        "y": 1325,
+        "w": 24,
+        "h": 26,
+        "kind": "tree"
+      },
+      {
+        "x": 1019,
+        "y": 1275,
+        "w": 24,
+        "h": 26,
+        "kind": "tree"
+      },
+      {
+        "x": 1740,
+        "y": 101,
+        "w": 24,
+        "h": 26,
+        "kind": "tree"
+      },
+      {
+        "x": -184,
+        "y": 644,
+        "w": 208,
+        "h": 12,
+        "kind": "wall"
+      },
+      {
+        "x": -184,
+        "y": 764,
+        "w": 208,
+        "h": 12,
+        "kind": "wall"
+      },
+      {
+        "x": 1896,
+        "y": 644,
+        "w": 208,
+        "h": 12,
+        "kind": "wall"
+      },
+      {
+        "x": 1896,
+        "y": 764,
+        "w": 208,
+        "h": 12,
+        "kind": "wall"
+      },
+      {
+        "x": -184,
+        "y": 644,
+        "w": 24,
+        "h": 132,
+        "kind": "wall"
+      },
+      {
+        "x": 2080,
+        "y": 644,
+        "w": 24,
+        "h": 132,
+        "kind": "wall"
+      },
+      {
+        "x": 790,
+        "y": 210,
+        "w": 68,
+        "h": 26,
+        "kind": "junk",
+        "low": true
+      },
+      {
+        "x": 906,
+        "y": 210,
+        "w": 64,
+        "h": 26,
+        "kind": "junk",
+        "low": true
+      },
+      {
+        "x": 748,
+        "y": 300,
+        "w": 28,
+        "h": 112,
+        "kind": "wall"
+      },
+      {
+        "x": 920,
+        "y": 320,
+        "w": 120,
+        "h": 28,
+        "kind": "junk",
+        "low": true
+      },
+      {
+        "x": 1440,
+        "y": 670,
+        "w": 100,
+        "h": 28,
+        "kind": "junk",
+        "low": true
+      },
+      {
+        "x": 1588,
+        "y": 670,
+        "w": 100,
+        "h": 28,
+        "kind": "junk",
+        "low": true
+      },
+      {
+        "x": 1440,
+        "y": 698,
+        "w": 28,
+        "h": 92,
+        "kind": "junk",
+        "low": true
+      },
+      {
+        "x": 1440,
+        "y": 838,
+        "w": 28,
+        "h": 100,
+        "kind": "junk",
+        "low": true
+      },
+      {
+        "x": 1530,
+        "y": 910,
+        "w": 158,
+        "h": 28,
+        "kind": "junk",
+        "low": true
+      },
+      {
+        "x": 773,
+        "y": 393,
+        "w": 375,
+        "h": 13,
+        "kind": "wall",
+        "level": 1
+      },
+      {
+        "x": 773,
+        "y": 805,
+        "w": 375,
+        "h": 13,
+        "kind": "wall",
+        "level": 1
+      },
+      {
+        "x": 773,
+        "y": 393,
+        "w": 13,
+        "h": 425,
+        "kind": "wall",
+        "level": 1
+      },
+      {
+        "x": 1135,
+        "y": 393,
+        "w": 13,
+        "h": 425,
+        "kind": "wall",
+        "level": 1
+      },
+      {
+        "x": 910,
+        "y": 643,
+        "w": 98,
+        "h": 35,
+        "kind": "junk",
+        "level": 1
+      },
+      {
+        "x": 1290,
+        "y": 420,
+        "w": 60,
+        "h": 28,
+        "kind": "junk",
+        "low": true
+      },
+      {
+        "x": 1580,
+        "y": 1166,
+        "w": 36,
+        "h": 28,
+        "kind": "junk",
+        "low": true
+      },
+      {
+        "x": 1664,
+        "y": 1166,
+        "w": 56,
+        "h": 28,
+        "kind": "junk",
+        "low": true
+      },
+      {
+        "x": 1076,
+        "y": 643,
+        "w": 59,
+        "h": 35,
+        "kind": "junk",
+        "level": 1
+      },
+      {
+        "x": 240,
+        "y": 60,
+        "w": 25,
+        "h": 300,
+        "kind": "wall"
+      },
+      {
+        "x": 240,
+        "y": 60,
+        "w": 50,
+        "h": 26,
+        "kind": "wall"
+      },
+      {
+        "x": 370,
+        "y": 60,
+        "w": 300,
+        "h": 26,
+        "kind": "wall"
+      },
+      {
+        "x": 240,
+        "y": 334,
+        "w": 310,
+        "h": 26,
+        "kind": "wall"
+      },
+      {
+        "x": 630,
+        "y": 334,
+        "w": 40,
+        "h": 26,
+        "kind": "wall"
+      },
+      {
+        "x": 645,
+        "y": 60,
+        "w": 25,
+        "h": 106,
+        "kind": "wall"
+      },
+      {
+        "x": 645,
+        "y": 228,
+        "w": 25,
+        "h": 132,
+        "kind": "wall"
+      }
+    ],
+    "rocks": [
+      {
+        "x": 1260,
+        "y": 860,
+        "w": 100,
+        "h": 86
+      },
+      {
+        "x": 740,
+        "y": 1200,
+        "w": 105,
+        "h": 82
+      },
+      {
+        "x": 1780,
+        "y": 1030,
+        "w": 70,
+        "h": 65
+      }
+    ],
+    "genSpots": [
+      {
+        "x": 200,
+        "y": 200
+      },
+      {
+        "x": 580,
+        "y": 400
+      },
+      {
+        "x": 935,
+        "y": 668
+      },
+      {
+        "x": 1510,
+        "y": 200
+      },
+      {
+        "x": 1740,
+        "y": 610
+      },
+      {
+        "x": 470,
+        "y": 1140
+      },
+      {
+        "x": 1390,
+        "y": 1210
+      },
+      {
+        "x": 180,
+        "y": 660
+      },
+      {
+        "x": 990,
+        "y": 900
+      },
+      {
+        "x": 1010,
+        "y": 593,
+        "level": 1
+      },
+      {
+        "x": 490,
+        "y": 180
+      }
+    ],
+    "hookSpots": [
+      {
+        "x": 390,
+        "y": 520
+      },
+      {
+        "x": 1110,
+        "y": 350
+      },
+      {
+        "x": 1600,
+        "y": 540
+      },
+      {
+        "x": 690,
+        "y": 920
+      },
+      {
+        "x": 1500,
+        "y": 1110
+      },
+      {
+        "x": 240,
+        "y": 1230
+      },
+      {
+        "x": 980,
+        "y": 1260
+      },
+      {
+        "x": 260,
+        "y": 390
+      },
+      {
+        "x": 180,
+        "y": 950
+      },
+      {
+        "x": 715,
+        "y": 320
+      },
+      {
+        "x": 1180,
+        "y": 570
+      },
+      {
+        "x": 1540,
+        "y": 1020
+      },
+      {
+        "x": 660,
+        "y": 1220
+      },
+      {
+        "x": 1200,
+        "y": 1300
+      }
+    ],
+    "palletSpots": [
+      {
+        "x": 590,
+        "y": 347
+      },
+      {
+        "x": 524,
+        "y": 846
+      },
+      {
+        "x": 1254,
+        "y": 1044
+      },
+      {
+        "x": 953,
+        "y": 818
+      },
+      {
+        "x": 1564,
+        "y": 684
+      },
+      {
+        "x": 1454,
+        "y": 814,
+        "axis": "x"
+      },
+      {
+        "x": 1374,
+        "y": 434
+      },
+      {
+        "x": 882,
+        "y": 223
+      },
+      {
+        "x": 1046,
+        "y": 660,
+        "level": 1
+      },
+      {
+        "x": 1640,
+        "y": 1180
+      }
+    ],
+    "windowSpots": [
+      {
+        "x": 1148,
+        "y": 660,
+        "axis": "x"
+      },
+      {
+        "x": 1264,
+        "y": 365,
+        "axis": "x"
+      },
+      {
+        "x": 294,
+        "y": 947,
+        "axis": "x"
+      },
+      {
+        "x": 658,
+        "y": 197,
+        "axis": "x"
+      }
+    ],
+    "lockers": [
+      {
+        "x": 823,
+        "y": 605
+      },
+      {
+        "x": 1085,
+        "y": 730
+      },
+      {
+        "x": 835,
+        "y": 543,
+        "level": 1
+      },
+      {
+        "x": 330,
+        "y": 404
+      },
+      {
+        "x": 1310,
+        "y": 310
+      },
+      {
+        "x": 350,
+        "y": 900
+      },
+      {
+        "x": 1160,
+        "y": 1100
+      }
+    ],
+    "survivorStarts": [
+      {
+        "x": 180,
+        "y": 240
+      },
+      {
+        "x": 180,
+        "y": 1150
+      },
+      {
+        "x": 1690,
+        "y": 210
+      },
+      {
+        "x": 1690,
+        "y": 1130
+      }
+    ],
+    "killerStart": {
+      "x": 970,
+      "y": 880
+    },
+    "gates": [
+      {
+        "x": 12,
+        "y": 710
+      },
+      {
+        "x": 1908,
+        "y": 710
+      }
+    ],
+    "hatch": {
+      "x": 950,
+      "y": 980
+    },
+    "interiorWalls": [
+      {
+        "x": 1035,
+        "y": 430,
+        "w": 55,
+        "h": 30,
+        "kind": "junk",
+        "level": 0
+      },
+      {
+        "x": 885,
+        "y": 488,
+        "w": 58,
+        "h": 35,
+        "kind": "junk",
+        "level": 0
+      },
+      {
+        "x": 1003,
+        "y": 488,
+        "w": 45,
+        "h": 35,
+        "kind": "junk",
+        "level": 0
+      },
+      {
+        "x": 973,
+        "y": 718,
+        "w": 23,
+        "h": 30,
+        "kind": "wall",
+        "level": 0
+      },
+      {
+        "x": 995,
+        "y": 718,
+        "w": 15,
+        "h": 23,
+        "kind": "wall",
+        "level": 0
+      },
+      {
+        "x": 935,
+        "y": 455,
+        "w": 25,
+        "h": 50,
+        "kind": "wall",
+        "level": 1
+      },
+      {
+        "x": 935,
+        "y": 565,
+        "w": 25,
+        "h": 33,
+        "kind": "wall",
+        "level": 1
+      }
+    ],
+    "interiorWindows": [
+      {
+        "x": 948,
+        "y": 535,
+        "axis": "x",
+        "level": 1
+      }
+    ],
+    "interiorPallets": [
+      {
+        "x": 973,
+        "y": 505,
+        "axis": "y",
+        "level": 0
+      }
+    ]
+  },
+  "pathfinding": {
+    "cell": 32,
+    "offset": 256,
+    "maxNodes": 2200,
+    "lineStep": 8
+  },
+  "ai": {
+    "pathSeconds": 1,
+    "pathRandom": 0.6,
+    "pathArrival": 12,
+    "stairRange": 27,
+    "windowRange": 52,
+    "windowAlign": 27,
+    "palletRange": 52,
+    "workSafeRange": 230,
+    "dangerRange": 240,
+    "palletThreatRange": 85,
+    "targetArrival": 40,
+    "loopSearchRange": 320,
+    "loopOffset": 38,
+    "stairsDangerRange": 170,
+    "stairsSearchRange": 190,
+    "fleeDirections": 12,
+    "fleeDistance": 260,
+    "fleeRadius": 15,
+    "coverBonus": 140,
+    "dropRange": 35,
+    "hatchRange": 45,
+    "rescueInjuredPenalty": 160,
+    "rescueRepairPenalty": 80,
+    "rescueSafeRange": 125,
+    "rescueUrgentSeconds": 30,
+    "rescueRange": 42,
+    "downHealBonus": 1000,
+    "downHealRange": 700,
+    "injuredHealRange": 160,
+    "healRange": 36,
+    "openGateBonus": 250,
+    "gateRange": 50,
+    "generatorDangerRange": 250,
+    "generatorDangerPenalty": 500,
+    "generatorPeerPenalty": 130,
+    "generatorProgressBonus": 180,
+    "repairRange": 47,
+    "hookRange": 48,
+    "injuredTargetBonus": 60,
+    "downTargetRange": 70,
+    "nearDownBonus": 100,
+    "farDownPenalty": 120,
+    "leadSeconds": 0.22,
+    "sightMemory": 7,
+    "pickupRange": 44,
+    "blockedPalletRange": 350,
+    "breakRange": 57,
+    "lockerMemoryRange": 75,
+    "lockerRetrySeconds": 8,
+    "traceRange": 190,
+    "noiseMemory": 5,
+    "rememberedArrival": 20,
+    "hatchCloseRange": 60,
+    "patrolProgressBonus": 450,
+    "patrolRetrySeconds": 18,
+    "patrolVisitedPenalty": 500,
+    "patrolCompletedPenalty": 900,
+    "patrolRange": 55,
+    "bodyTargetExclusion": 35,
+    "retargetDistance": 65,
+    "stuckDistance": 0.1,
+    "pathGoalTolerance": 35,
+    "fleeBounds": {
+      "left": 65,
+      "top": 65,
+      "right": 1850,
+      "bottom": 1370
+    },
+    "fallback": {
+      "x": 950,
+      "y": 900
+    }
+  },
+  "touch": {
+    "stickRadiusRatio": 0.32,
+    "deadZone": 8,
+    "runThreshold": 0.7,
+    "attackAimDeadZone": 14
+  },
+  "_字段说明": {
+    "core": "基础平衡：速度、修机/治疗/救援时间、挂钩阶段、恐惧半径、攻击距离和视野。vision=null 无限视野。",
+    "movement": "移动速度与倍率、角色碰撞、加速时长和快翻所需速度。",
+    "actions": "攻击恢复、踢机/踩板耗时、自救概率、保护时间、晕眩与回退比例。",
+    "traversal": "楼梯/跳落/翻窗/翻板交互距离、耗时、冷却与落点偏移。",
+    "interactions": "维修、治疗、救援、地窖等交互距离，以及操作时靠近目标的站位距离。",
+    "lockers": "衣柜搜索/进入/抓取耗时及衣柜尺寸。",
+    "skill": "校准初次延时、周期、警告时间、成功区间和失败惩罚。",
+    "alerts": "声音、修机完成/失败、救援等提示的持续时间。",
+    "match": "发电机数量、通电要求、户外钩子数、出口动画、追逐与死亡时长。",
+    "lunge": "突刺起手、接触、结束、移动距离和收刀时长。",
+    "camera": "镜头角度/高度；mobileKillerZoom 越小手机屠夫看得越远，0.75 是当前值。fit 控制不同屏幕缩放。",
+    "audio": "音量默认值、嘲讽传播距离、追逐音乐/工作音/脚步音和心跳参数。",
+    "stairsVisual": "楼梯宽、长、台阶数、高度和颜色；颜色为十进制 RGB。",
+    "layout": "随机长短板区数量、长度、间距、生成范围及保留通道。",
+    "basement": "地下室墙厚、缩进、楼梯偏移、四个钩子相对坐标；shackChance 为出现在白房的概率。",
+    "world": "地图坐标。level 0=一楼/室外、1=二楼、-1=地下室。interior 开头为新增房内地形。成组调整建筑墙壁、楼板、楼梯与物件坐标，避免重叠。",
+    "pathfinding": "寻路网格、搜索上限和线段采样距离。",
+    "ai": "AI 追逐、躲避、救援、巡逻的距离阈值和评分权重。",
+    "touch": "摇杆死区、奔跑阈值和攻击拖动瞄准死区。",
+    "palletVisual": "木板倾倒、回弹、立板尺寸、各状态颜色与扬尘时长。仅控制视觉，放板碰撞仍立即生效。"
+  },
+  "physics": {
+    "gateHalfWidth": 8,
+    "gateHalfHeight": 54,
+    "gateBarrierHalfHeight": 64,
+    "barrierAlertSeconds": 0.6,
+    "palletHalfLength": 23,
+    "palletHalfThickness": 10,
+    "windowHalfWidth": 9,
+    "windowHalfHeight": 23,
+    "carryOffsetY": 14,
+    "hookOffsetY": 16,
+    "hookBodyOffsetX": 11,
+    "hookBodyOffsetY": -26
+  },
+  "hud": {
+    "mobileToastTop": 56,
+    "mobileDirectionsTop": 88,
+    "mobileRepairTop": 132
+  },
+  "rendering": {
+    "density": 1.5,
+    "maxDensity": 2,
+    "mobileDensity": 1
+  },
+  "killerVisual": {
+    "bodyScale": 1.3
+  },
+  "darkwoodVision": {
+    "outsideAlpha": 0.88,
+    "rays": 96,
+    "refreshSeconds": 0,
+    "rockMinSize": 80
+  },
+  "network": {
+    "predictionLimit": 0.5,
+    "correctionSeconds": 0.09,
+    "snapDistance": 72,
+    "inputTimeout": 1,
+    "keyframeEvery": 10,
+    "extrapolationSeconds": 0.1,
+    "movementBurstSeconds": 0.25,
+    "movementStartSeconds": 0.15
+  }
+}

@@ -1,0 +1,11 @@
+#taunt-wheel{position:fixed;z-index:45;touch-action:none;user-select:none;filter:drop-shadow(0 6px 16px #000b)}
+#taunt-wheel[hidden],#taunt-button[hidden]{display:none!important}
+#taunt-wheel svg{display:block;width:100%;height:100%;overflow:visible}
+#taunt-wheel path{fill:#172a27ee;stroke:#b4a576;stroke-width:1.5;transition:fill .08s}
+#taunt-wheel .selected path{fill:#967233;stroke:#ffe2a1;stroke-width:3}
+#taunt-wheel text{fill:#fff0cf;text-anchor:middle;dominant-baseline:central;font:600 12px system-ui;pointer-events:none}
+#taunt-wheel circle{fill:#10201ff5;stroke:#b4a576;stroke-width:2}
+#taunt-wheel .taunt-cancel{font-size:30px}
+#taunt-button{position:fixed;z-index:19;right:max(220px,calc(env(safe-area-inset-right) + 204px));bottom:124px;width:58px;height:48px;padding:0;border:1px solid #cbb77c99;border-radius:12px;background:#162922db;color:#ffe4aa;touch-action:manipulation;font-size:14px}
+#taunt-wheel,#taunt-button{-webkit-tap-highlight-color:transparent}
+.direction-marker.taunt{border-color:#ebba66;color:#ffe0a0}

@@ -1,0 +1,3 @@
+﻿import {Match} from '../src/game';
+import {blocked,findPath,genSpots,hookSpots,dist} from '../src/world';
+for(let seed=1;seed<=12;seed++){let n=seed;const rng=()=>((n=(n*1664525+1013904223)>>>0)/4294967296);const m=new Match('survivor',rng);const points=[...genSpots,...hookSpots,...m.actors,...m.gates.map(g=>({...g,x:g.x+(g.id===0?32:-32)})),...m.pallets.filter(p=>p.loop).flatMap(p=>p.axis==='x'?[{x:p.x-36,y:p.y},{x:p.x+36,y:p.y}]:[{x:p.x,y:p.y-36},{x:p.x,y:p.y+36}])];const failures=points.filter(p=>{const path=findPath({x:950,y:820},p,m.obstacles());return blocked(p,10,m.obstacles())||!path.length||dist(path.at(-1)!,p)>35;});console.log({seed,loops:m.terrain.length/2,failures});}

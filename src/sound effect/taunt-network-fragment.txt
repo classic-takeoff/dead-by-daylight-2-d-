@@ -1,0 +1,18 @@
+ await host.evaluate(()=>{const m=window.fogbound.match;m.survivorAI=()=>{};m.killerAI=()=>{};Object.assign(m.killer,{x:600,y:650,level:0});Object.assign(m.actors[0],{x:700,y:650,level:1});});
+ await Promise.all([host,guest].map(page=>page.waitForFunction(()=>window.fogbound.scene.soundFX.buffers.size===45)));
+ for(const page of [host,guest])await page.evaluate(()=>{const sound=window.fogbound.scene.soundFX,original=sound.taunt.bind(sound);window.tauntCalls=[];sound.taunt=(...args)=>{window.tauntCalls.push(args.slice(0,2));original(...args);};});
+ await guest.mouse.move(640,400);await guest.keyboard.down('q');await guest.mouse.move(640,305);await guest.keyboard.up('q');
+ await host.waitForFunction(()=>window.tauntCalls.some(([id,actor])=>id===0&&actor===0));await guest.waitForFunction(()=>window.tauntCalls.some(([id,actor])=>id===0&&actor===0));
+ await host.locator('.direction-marker.taunt').waitFor();const marker=await host.locator('.direction-marker.taunt').innerText();assert.match(marker,/正在嘲讽/);assert.match(marker,/10m/);assert.match(marker,/2楼/);
+ assert.equal(await guest.locator('.direction-marker.taunt').count(),0);
+ await host.screenshot({path:'src/sound effect/taunt-network.png'});
+ await host.mouse.move(640,400);await host.keyboard.down('q');await host.mouse.move(640,305);await host.keyboard.up('q');await guest.waitForFunction(()=>window.tauntCalls.some(([id,actor])=>id===0&&actor===4));
+ await host.waitForTimeout(550);for(const page of [host,guest])assert.deepEqual(await page.evaluate(()=>window.tauntCalls),[[0,0],[0,4]]);
+ // A previously inaudible voice becomes audible on approach, for the remainder of the clip.
+ await host.evaluate(()=>{const m=window.fogbound.match;Object.assign(m.actors[0],{x:1850,y:1300,level:0});m.playTaunt(m.actors[0],3);});
+ await host.waitForFunction(()=>window.tauntCalls.some(([id,actor])=>id===3&&actor===0));await guest.waitForFunction(()=>window.tauntCalls.some(([id,actor])=>id===3&&actor===0));
+ await host.waitForTimeout(160);assert.equal(await host.locator('.direction-marker.taunt').count(),0);
+ const silent=await host.evaluate(()=>window.fogbound.scene.soundFX.voices.get(0).gain.gain.value);assert.ok(silent<.001);
+ await host.evaluate(()=>{const m=window.fogbound.match;Object.assign(m.actors[0],{x:m.killer.x+100,y:m.killer.y,level:0});});await host.locator('.direction-marker.taunt').waitFor();await host.waitForTimeout(250);assert.ok(await host.evaluate(()=>window.fogbound.scene.soundFX.voices.get(0).gain.gain.value>.2));
+ assert.deepEqual(errors,[]);console.log({guestToHost:true,hostToGuest:true,oneShotDelivery:true,nameDistanceFloor:marker,hearingRange:true,approachDuringPlayback:true,errors});
+}finally{await browser.close();}
